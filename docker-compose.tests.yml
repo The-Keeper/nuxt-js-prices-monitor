@@ -1,0 +1,25 @@
+services:
+  database:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: price
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+      
+  fetching-service:
+    build: 
+      context: ./data-fetching-service
+      network: host
+    ports:
+      - 5001:5000
+    depends_on:
+      - database
+    volumes:
+      - ./data-fetching-service:/usr/src/app
+    entrypoint: python
