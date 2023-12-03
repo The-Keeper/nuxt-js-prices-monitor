@@ -1,7 +1,5 @@
 <template>
-  <NuxtLayout name="hello">
-    <template #title>{{ productName }}</template>
-    <template #message>{{ message }}</template>
+  <NuxtLayout name="chart">
   </NuxtLayout>
 </template>
 
