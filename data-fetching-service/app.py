@@ -45,7 +45,8 @@ def populate_job():
             return schedule.CancelJob
         except requests.exceptions.HTTPError as err:
             pass
-    logging.debug("Populate job executed.")
+    else:
+        return schedule.CancelJob
 
 schedule.every(5).seconds.do(populate_job)
 
