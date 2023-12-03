@@ -1,10 +1,10 @@
-node_modules
-*.log
-.nuxt
-nuxt.d.ts
-.output
-dist
-.DS_Store
+web/node_modules
+web/*.log
+web/.nuxt
+web/nuxt.d.ts
+web/.output
+web/dist
+web/.DS_Store
 db-data/
 pgadmin-data/
 .env

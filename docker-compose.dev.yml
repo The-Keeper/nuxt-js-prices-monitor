@@ -1,7 +1,7 @@
 services:
   web:
     build:
-      context: .
+      context: ./web
       dockerfile: Dockerfile
       target: development
       network: host
@@ -10,8 +10,8 @@ services:
     environment:
       - NODE_ENV=development
     volumes:
-      - ./:/home/node/app/
-      - ./node_modules:/home/node/app/node_modules/
+      - ./web:/home/node/app/
+      - /home/node/app/node_modules/
 
   database:
     container_name: postgres
