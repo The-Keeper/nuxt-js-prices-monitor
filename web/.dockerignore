@@ -3,5 +3,3 @@
 .nuxt/
 .vscode/
 node_modules/
-db-data/
-pgadmin-data/
