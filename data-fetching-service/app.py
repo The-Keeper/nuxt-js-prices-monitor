@@ -13,11 +13,8 @@ import logging
 
 conn = psycopg2.connect(host="postgres", dbname="price", user="admin", password="admin")
 # Create a cursor
+conn.autocommit = True
 cur = conn.cursor()
-
-# Count rows in a table
-cur.execute("SELECT COUNT(*) FROM currency")
-row_count: int = cur.fetchone()[0]
 
 def parse_response():
     pass
